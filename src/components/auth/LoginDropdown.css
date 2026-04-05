@@ -1,0 +1,78 @@
+.login-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-login-as {
+  background-color: #0a1a5c;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.btn-login-as:hover {
+  background-color: #1e3a8a;
+  transform: translateY(-1px);
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.login-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #ffc001;
+  border: 1px solid #f9b804;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(10, 26, 92, 0.18);
+  min-width: 145px;
+  z-index: 200;
+  overflow: hidden;
+  animation: dropDown 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.login-dropdown-item {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #1e293b;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.15s;
+}
+
+.login-dropdown-item:hover {
+  background: #ffdd00;
+  color: #1e293b;
+}
+
+.login-dropdown-item:not(:last-child) {
+  border-bottom: 1px solid #eca100;
+}

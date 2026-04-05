@@ -1,0 +1,283 @@
+.admin-edit-txn-section {
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+  border-radius: 10px;
+}
+
+.admin-edit-txn-section.dark {
+  --bg-primary: #0d1635;
+  --bg-secondary: #1a2d5a;
+  --bg-tertiary: #273052;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(99, 102, 241, 0.2);
+  --input-bg: #1a2d5a;
+  --input-border: rgba(99, 102, 241, 0.3);
+}
+
+.admin-edit-txn-section.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: rgba(99, 102, 241, 0.1);
+  --input-bg: #f8fafc;
+  --input-border: rgba(99, 102, 241, 0.2);
+   background: linear-gradient(135deg, #bbbac48e 0%, #edeef4cb 100%);
+}
+
+.aets-search-wrapper {
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.aets-search-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.aets-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.aets-search-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--input-border);
+  border-radius: 0.5rem;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.aets-search-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background-color: var(--bg-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.aets-not-found {
+  font-size: 0.85rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+}
+
+.aets-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.aets-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.aets-info-row:last-child {
+  border-bottom: none;
+}
+
+.aets-info-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aets-info-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  
+  color: var(--text-primary);
+}
+
+.aets-info-value.income {
+  color: #10b981;
+}
+
+.aets-info-value.expense {
+  color: #f43f5e;
+}
+
+.aets-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+}
+
+.aets-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.aets-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.aets-group-full {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.aets-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.5rem;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.aets-input[type="select"],
+.aets-group select {
+  background-color: #fde047 !important;
+  color: #000000 !important;
+  border: 1px solid #facc15 !important;
+}
+
+.aets-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background-color: var(--bg-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.aets-input.error {
+  border-color: #ef4444;
+}
+
+.aets-error {
+  font-size: 0.8rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+}
+
+.aets-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-aets-cancel {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-aets-cancel:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.btn-aets-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-aets-submit:hover:not(:disabled) {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-aets-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aets-empty-state {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: var(--bg-secondary);
+  border: 2px dashed var(--border-color);
+  border-radius: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.aets-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  animation: slideUp 0.3s ease;
+  z-index: 1000;
+}
+
+.aets-toast.dark {
+  background-color: #1e40af;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-edit-txn-section {
+    padding: 1.5rem;
+  }
+
+  .aets-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aets-toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: auto;
+    top: 1rem;
+  }
+}

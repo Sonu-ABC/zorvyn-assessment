@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Reset and Full Screen Fixes */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  /* The gradient logic: 135deg goes from top-left to bottom-right */
+  background: linear-gradient(135deg, #e1e4e6 0%, #5a6778 100%);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+
+.landing-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  /* Make the container background transparent so the body gradient shows through */
+  background: transparent;
+}
+
+/* --- Navbar --- */
+.navbar {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  gap: 8px;
+  color: #1e1b4b;
+}
+
+.logo-icon {
+  color: #1e1b4b;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #0f172a;
+}
+
+.btn-primary {
+  background-color: #0a1a5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #1e3a8a;
+}
+
+/* --- Hero Section --- */
+.hero {
+  width: 100%;
+  flex: 1;
+  /* Allows it to take up remaining screen space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+  /* Reduced to move text higher */
+  text-align: center;
+}
+
+.hero-text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  color: #1e1b4b;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #eff0f1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  z-index: 10;
+  font-family: cursive;
+  font-weight: 1;
+}
+
+/* --- Visual Section & Animations --- */
+.visual-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* CRITICAL: Allows the hand to move outside the section bounds */
+  overflow: visible;
+  margin-top: 20px;
+}
+
+.big-bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 550px;
+  height: 550px;
+  background-color: #0a1a5c;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 60px rgba(10, 26, 92, 0.3);
+}
+
+.hand-wrapper {
+  position: relative;
+  z-index: 2;
+  /* Keeps it above the bubble and small bubbles */
+  display: flex;
+  justify-content: center;
+}
+
+.hand-image {
+  max-height: 420px;
+  width: auto;
+  object-fit: contain;
+  /* Optional: adds a slight drop shadow to make it pop off the bubble */
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+
+}
+
+/* --- Small Bubbles --- */
+/* Increased the target X and Y in your Framer Motion variants to match these further-out positions */
+.small-bubble {
+  position: absolute;
+  top: 40%;
+  /* Adjusted starting point for better "radial" movement */
+  left: 50%;
+  background-color: #243167;
+  border-radius: 50%;
+  border: 2px solid rgb(38, 32, 128);
+  z-index: 5;
+  /* Between the big bubble and the hand */
+  box-shadow: 0 0 60px rgba(10, 26, 92, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small-bubble:hover i,
+.small-bubble:hover svg {
+  transform: scale(1.12);
+  transition: transform .2s ease;
+}
+
+.small-bubble i,
+.small-bubble svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  font-size: 1.2rem;
+  color: #f7a601;
+  /* orange */
+  line-height: 1;
+  text-align: center;
+}
+
+/* Specific Bubble Sizes */
+.sb-1 {
+  width: 90px;
+  height: 90px;
+}
+
+.sb-2 {
+  width: 50px;
+  height: 50px;
+}
+
+.sb-3 {
+  width: 70px;
+  height: 70px;
+}
+
+.sb-4 {
+  width: 80px;
+  height: 80px;
+}
+
+.sb-5 {
+  width: 60px;
+  height: 60px;
+}
+
+.sb-6 {
+  width: 90px;
+  height: 90px;
+}
+
+.sb-7 {
+  width: 45px;
+  height: 45px;
+}
+
+.sb-8 {
+  width: 70px;
+  height: 70px;
+}
+
+.sb-9 {
+  width: 70px;
+  height: 70px;
+}
+
+.sb-10 {
+  width: 65px;
+  height: 65px;
+}
+
+.sb-11 {
+  width: 20px;
+  height: 20px;
+}
+
+.sb-12 {
+  width: 19px;
+  height: 19px;
+}
+
+.sb-13 {
+  width: 12px;
+  height: 12px;
+}
+
+
+
+.sb-1 i {
+  font-size: 2.1rem;
+  /* adjust as needed */
+  color: #f59e0b;
+  /* orange */
+  width: 24px;
+  height: 24px;
+}
+
+.sb-3 i {
+  font-size: 1.9rem;
+  /* adjust as needed */
+  color: #f59e0b;
+  /* orange */
+  width: 24px;
+  height: 24px;
+}
+
+.sb-4 i {
+  font-size: 2.1rem;
+  /* adjust as needed */
+  color: #f59e0b;
+  /* orange */
+  width: 24px;
+  height: 24px;
+}
+
+.sb-5 i {
+  font-size: 1.7rem;
+  /* adjust as needed */
+  color: #f59e0b;
+  /* orange */
+  width: 24px;
+  height: 24px;
+}
+
+.sb-6 i {
+  font-size: 2.0rem;
+  /* adjust as needed */
+  color: #f59e0b;
+  /* orange */
+  width: 24px;
+  height: 24px;
+}
+
+.sb-8 i {
+  font-size: 1.4rem;
+  /* adjust as needed */
+  color: #f59e0b;
+  /* orange */
+  width: 24px;
+  height: 24px;
+}
+
+.sb-9 i {
+  font-size: 2.1rem;
+  /* adjust as needed */
+  color: #f59e0b;
+  /* orange */
+  width: 24px;
+  height: 24px;
+}
+
+.sb-10 i {
+  font-size: 1.5rem;
+  /* adjust as needed */
+  color: #f59e0b;
+  /* orange */
+  width: 24px;
+  height: 24px;
+}
+
+.circle-icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+/* ── Responsive: Landing Page ── */
+
+
+
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+.visual-section {
+    height: 549px;
+    margin-top: 0;
+  }
+.big-bubble {
+    width: 500px;
+    height: 500px;
+    bottom: -90px;
+  }
+  .hand-image {
+    max-height: 340px;
+  }
+}
+
+
+@media (max-width: 770px) {
+
+  html,
+  body {
+    overflow: auto;
+    position: static;
+  }
+
+  .navbar {
+    width: 92%;
+    padding: 16px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 16px;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+    padding: 0 16px;
+  }
+
+  .subtitle {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
+
+  .hero {
+    margin-top: 20px;
+    justify-content: flex-start;
+  }
+
+  /* ── Keep big bubble + hand, hide small bubbles ── */
+  .visual-section {
+    height: 530px;
+    margin-top: 0;
+  }
+
+  .small-bubble {
+    display: none !important;
+  }
+
+  .big-bubble {
+    width: 450px;
+    height: 450px;
+    bottom: -140px;
+  }
+
+  /* Override framer-motion inline styles to make hand static */
+  .hand-wrapper {
+    transform: scale(1.3) translateY(-30px);
+    opacity: 1 !important;
+    height:280px;
+    
+  }
+
+  .hand-image {
+    max-height: 280px;
+  }
+
+  .btn-login-as {
+    padding: 9px 16px;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.9rem;
+    padding: 0 12px;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    padding: 0 16px;
+  }
+
+  .visual-section {
+    height: 575px;
+  }
+
+  .big-bubble {
+    width: 350px;
+    height: 350px;
+    bottom: 16px;
+  }
+
+  .hand-wrapper {
+    transform: scale(1) translateY(-1px);
+  }
+
+  .hand-image {
+    max-height: 240px;
+  }
+}

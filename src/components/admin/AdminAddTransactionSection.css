@@ -1,0 +1,247 @@
+.admin-add-txn-section {
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 10px;
+}
+
+.admin-add-txn-section.dark {
+  --bg-primary: #0d1635;
+  --bg-secondary: #1a2d5a;
+  --bg-tertiary: #273052;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(99, 102, 241, 0.2);
+  --input-bg: #1a2d5a;
+  --input-border: rgba(99, 102, 241, 0.3);
+}
+
+.admin-add-txn-section.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: rgba(99, 102, 241, 0.1);
+  --input-bg: #f8fafc;
+  --input-border: rgba(99, 102, 241, 0.2);
+   background: linear-gradient(135deg, #bbbac48e 0%, #edeef4cb 100%);
+}
+
+.admin-section-header-lg {
+  margin-bottom: 2.5rem;
+}
+
+.admin-section-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-section-title-lg {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.admin-section-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.admin-add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+}
+
+.aaf-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.aaf-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.aaf-group-full {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  grid-column: 1 / -1;
+}
+
+.aaf-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.aaf-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.5rem;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.aaf-input[type="select"],
+.aaf-group select {
+  background-color: #fde047 !important;
+  color: #000000 !important;
+  border: 1px solid #facc15 !important;
+}
+
+.aaf-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background-color: var(--bg-primary);
+}
+
+.aaf-input.error {
+  border-color: #ef4444;
+}
+
+.aaf-error {
+  font-size: 0.8rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+}
+
+.aaf-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: var(--bg-secondary);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.aaf-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.aaf-summary-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aaf-summary-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.aaf-summary-value.income {
+  color: #10b981;
+}
+
+.aaf-summary-value.expense {
+  color: #f43f5e;
+}
+
+.aaf-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-aaf-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-aaf-submit:hover:not(:disabled) {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.btn-aaf-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aaf-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: #10b981;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  animation: slideUp 0.3s ease;
+  z-index: 1000;
+}
+
+.aaf-toast.dark {
+  background-color: #059669;
+}
+
+.aaf-toast.light {
+  background-color: #10b981;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-add-txn-section {
+    padding: 1.5rem;
+  }
+
+  .admin-section-title-lg {
+    font-size: 1.5rem;
+  }
+
+  .aaf-grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .aaf-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .aaf-toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: auto;
+    top: 1rem;
+  }
+}

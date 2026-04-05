@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.home-section {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+/* ── Dash card base ── */
+.dash-card {
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.dash-card:hover {
+  transform: translateY(-2px);
+}
+
+.home-section.dark  .dash-card { background: rgba(230, 231, 234, 0.04); border: 1px solid rgba(99,102,241,0.18); box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
+.home-section.light .dash-card { background: linear-gradient(135deg, #d9d9dd 0%, #f7f6f4 100%); border: 1px solid #e8edf5; box-shadow: 0 2px 16px rgba(10,26,92,0.07); }
+
+.card-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 2px;
+}
+.home-section.dark  .card-title { color: #b0b2b9; }
+.home-section.light .card-title { color: #1e293b; }
+
+.card-subtitle {
+  font-size: 0.74rem;
+  margin-bottom: 14px;
+}
+.home-section.dark  .card-subtitle { color: #536080; }
+.home-section.light .card-subtitle { color: #94a3b8; }
+
+/* ── Rows ── */
+.home-row { display: grid; gap: 20px; }
+.home-row-top    { grid-template-columns: 1.1fr 1fr 0.9fr; }
+.home-row-mid    { grid-template-columns: 2fr 1fr; }
+.home-row-bottom { grid-template-columns: 1fr 2fr; }
+
+/* ── Credit card ── */
+.credit-card-wrap { padding: 0; }
+.credit-card {
+  background: linear-gradient(135deg, #1a1f6e 0%, #4338ca 45%, #7c3aed 100%);
+  border-radius: 6px;
+  padding: 24px;
+  height: 100%;
+  min-height: 200px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 32px rgba(99,102,241,0.4);
+}
+.cc-watermark {
+  position: absolute;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  border: 40px solid rgba(255,255,255,0.06);
+  bottom: -80px; right: -80px;
+}
+.cc-row { display: flex; justify-content: space-between; align-items: center; }
+.cc-brand { font-size: 1rem; font-weight: 800; letter-spacing: 0.04em; color: rgba(255,255,255,0.9); }
+.cc-chip {
+  width: 36px; height: 28px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #f1dc3b, #f0a80c);
+  margin: 14px 0 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  position: relative;
+}
+.cc-chip::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 6px; right: 6px;
+  height: 1px;
+  background: rgba(0,0,0,0.25);
+  transform: translateY(-50%);
+}
+.cc-number { font-size: 0.95rem; letter-spacing: 0.22em; color: rgba(255,255,255,0.8); margin-bottom: 14px; font-weight: 600; }
+.cc-label { font-size: 0.64rem; color: rgba(255,255,255,0.55); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+.cc-balance { font-size: 1.7rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; }
+.cc-holdername { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.9); }
+
+/* ── Monthly stats card ── */
+.monthly-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.monthly-header .card-title { margin-bottom: 0; display: flex; align-items: center; gap: 6px; }
+
+.month-select {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 19px;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.monthly-stats-body { display: flex; flex-direction: column; gap: 12px; }
+
+.monthly-stat {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+.home-section.dark  .monthly-stat { background: linear-gradient(135deg, #f5c60a3f 0%, #f8d8051d 100%); }
+.home-section.light .monthly-stat {  background: linear-gradient(135deg, #f5c60a3f 0%, #f8d8051d 100%); border: 1px solid #e98e329d; }
+
+.income-stat svg { color: #10b981; }
+.expense-stat svg { color: #f43f5e; }
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.home-section.dark  .stat-label { color: #d6def1; }
+.home-section.light .stat-label { color: #263549; }
+
+.stat-value { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
+.income-val  { color: #10b981; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+.expense-val { color: #f43f5e; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+.bar-line-card
+.monthly-net {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 14px 0;
+}
+.net-val { font-size: 1rem; font-weight: 700; }
+.net-val.positive { color: #10b981; }
+.net-val.negative { color: #f43f5e; }
+
+/* ── Ring chart card ── */
+.ring-card { display: flex; flex-direction: column; align-items: center; position: relative; }
+.ring-card .card-title { align-self: flex-start; }
+.ring-card .card-subtitle { align-self: flex-start; color: white; }
+
+.ring-center-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -5%);
+  display: flex; flex-direction: column; align-items: center;
+  pointer-events: none;
+}
+.ring-pct { font-size: 2rem; font-weight: 900; }
+.ring-sublabel { font-size: 0.68rem; }
+.home-section.dark  .ring-sublabel { color: #536080; }
+.home-section.light .ring-sublabel { color: #050b16; }
+
+.ring-legend {
+  display: flex; gap: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+/* ── Bar+line card ── */
+.bar-line-card { 
+  position: relative;
+  overflow: hidden;
+ 
+}
+.home-section.dark .bar-line-card .card-title { color: #ffffff; }
+.home-section.light .bar-line-card .card-title { color: #ffffff; }
+
+.bar-line-card::before {
+
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/background.jpg') center / cover no-repeat fixed;
+  z-index: 0;
+  pointer-events: none;
+   color: white;
+}
+.bar-line-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  pointer-events: none;
+   color: white;
+}
+.bar-line-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide tooltip cursor rectangle on hover */
+.bar-line-card .recharts-tooltip-cursor {
+  opacity: 0.2; /* Reduced opacity for less visible hover rectangle */
+}
+
+/* ── Income pie + Expense pie ── */
+.income-pie-card, .expense-pie-card {
+  background: linear-gradient(
+    135deg,
+    rgba(240, 238, 238, 0.08),
+    rgba(255,255,255,0.02)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+.recharts-sector {
+  filter: drop-shadow(0px 4px 10px rgba(108, 99, 255, 0.4));
+  transition: all 0.2s ease;
+}
+.recharts-sector:hover {
+  filter: drop-shadow(0px 6px 18px rgba(108, 99, 255, 0.7)) drop-shadow(0px 0px 12px rgba(108, 99, 255, 0.5));
+  opacity: 1 !important;
+}
+.pie-legend {
+  display: flex; flex-wrap: wrap; gap: 6px 12px;
+  margin-top: 8px;
+}
+.pie-legend-item { display: flex; align-items: center; gap: 5px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 10%; flex-shrink: 0; }
+.legend-label { font-size: 0.72rem; }
+.home-section.dark  .legend-label { color: #8292b4; }
+.home-section.light .legend-label { color: #64748b; }
+
+/* ── Area chart card ── */
+.area-chart-card {}
+
+/* ── Empty state ── */
+.empty-chart {
+  display: flex; align-items: center; justify-content: center;
+  height: 160px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+.home-section.dark  .empty-chart { border: 2px dashed rgba(99,102,241,0.2); color: #536080; }
+.home-section.light .empty-chart { border: 2px dashed #e2e8f0; color: #94a3b8; }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .home-row-top    { grid-template-columns: 1fr 1fr; }
+  .home-row-top .ring-card { grid-column: 1 / -1; }
+  .home-row-mid    { grid-template-columns: 1fr; }
+  .home-row-bottom { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .home-row-top { grid-template-columns: 1fr; }
+  .home-section { gap: 14px; }
+  .dash-card { padding: 16px; }
+  .credit-card { padding: 18px; min-height: 170px; }
+  .cc-balance { font-size: 1.4rem; }
+  .cc-number { font-size: 0.82rem; letter-spacing: 0.18em; }
+  .stat-value { font-size: 1.15rem; }
+  .monthly-stat { padding: 10px 12px; }
+}
+@media (max-width: 480px) {
+  .home-section { gap: 10px; padding-bottom: 10px; }
+  .dash-card { padding: 12px; border-radius: 10px; }
+  .credit-card { padding: 14px; min-height: 150px; border-radius: 10px; }
+  .cc-brand { font-size: 0.85rem; }
+  .cc-balance { font-size: 1.2rem; }
+  .cc-number { font-size: 0.75rem; }
+  .cc-holdername { font-size: 0.75rem; }
+  .card-title { font-size: 0.8rem; }
+  .stat-value { font-size: 1rem; }
+  .ring-pct { font-size: 1.4rem; }
+  .pie-legend { gap: 4px 8px; }
+  .legend-label { font-size: 0.65rem; }
+  .monthly-stats-body { gap: 8px; }
+  .monthly-stat { padding: 8px 10px; border-radius: 10px; }
+}
