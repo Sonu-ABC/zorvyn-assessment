@@ -91,7 +91,7 @@ The app opens at **http://localhost:5173**.
 
 ## 🚀 Vercel Deployment Link :
  
-   **http://localhost:5173**--------------------------------------------------------
+   **https://zorvyn-assessment-mauve.vercel.app/**
 
 ---
 
