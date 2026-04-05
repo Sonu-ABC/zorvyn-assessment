@@ -376,15 +376,46 @@ h1 {
   .subtitle {
     font-size: 0.95rem;
   }
-.visual-section {
-    height: 549px;
+
+  /* ── Hide ALL small bubbles on non-desktop ── */
+  .small-bubble {
+    display: none !important;
+  }
+
+  /* ── Visual section fixed at bottom of viewport ── */
+  .visual-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
     margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 0;
+    pointer-events: none;
   }
-.big-bubble {
-    width: 500px;
-    height: 500px;
-    bottom: -90px;
+
+  .big-bubble {
+    width: 480px;
+    height: 450px;
+    bottom: -120px;
   }
+
+  /* Override framer-motion inline styles → static, no movement */
+  .hand-wrapper {
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+    position: relative !important;
+  }
+
+  .hand-wrapper * {
+    animation: none !important;
+    transition: none !important;
+  }
+
   .hand-image {
     max-height: 340px;
   }
@@ -440,28 +471,17 @@ h1 {
     justify-content: flex-start;
   }
 
-  /* ── Keep big bubble + hand, hide small bubbles ── */
+  /* Keep visual section fixed at the very bottom */
   .visual-section {
-    height: 530px;
-    margin-top: 0;
-  }
-
-  .small-bubble {
-    display: none !important;
+    position: fixed;
+    bottom: 0;
+    z-index: 0;
   }
 
   .big-bubble {
-    width: 450px;
-    height: 450px;
-    bottom: -140px;
-  }
-
-  /* Override framer-motion inline styles to make hand static */
-  .hand-wrapper {
-    transform: scale(1.3) translateY(-30px);
-    opacity: 1 !important;
-    height:280px;
-    
+    width: 420px;
+    height: 420px;
+    bottom: -130px;
   }
 
   .hand-image {
@@ -485,21 +505,13 @@ h1 {
     padding: 0 16px;
   }
 
-  .visual-section {
-    height: 575px;
-  }
-
   .big-bubble {
-    width: 350px;
-    height: 350px;
-    bottom: 16px;
-  }
-
-  .hand-wrapper {
-    transform: scale(1) translateY(-1px);
+    width: 320px;
+    height: 320px;
+    bottom: -60px;
   }
 
   .hand-image {
-    max-height: 240px;
+    max-height: 230px;
   }
 }

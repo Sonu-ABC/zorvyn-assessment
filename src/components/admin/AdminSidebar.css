@@ -201,7 +201,8 @@ background: rgba(36, 39, 251, 0.18);
 .admin-sidebar-spacer { flex: 1; }
 .admin-sidebar-bottom {
   display: flex; flex-direction: column; gap: 2px;
-  padding: 8px 8px 20px;
+  padding: 8px 8px 16px;
+  margin-bottom: 60px;
 }
 
 .admin-sidebar.dark  .logout-btn:hover { background: rgba(239,68,68,0.12) !important; color: #f87171 !important; }

@@ -42,8 +42,11 @@ export default function AdminDashboardSection({ allUsers, allTransactions, isDar
   const cls = isDark ? 'dark' : 'light';
 
   /* ── Circular Carousel ── */
-  const VISIBLE = 4;                  // cards shown at once
   const GAP_PX = 16;                  // gap between cards (must match CSS)
+
+  // Responsive card count — adapts to viewport width
+  const [visibleCount, setVisibleCount] = useState(4);
+  const VISIBLE = visibleCount;
   const totalUsers = allUsers.length;
 
   // We clone the last VISIBLE cards at the front and first VISIBLE at the back
@@ -77,13 +80,20 @@ export default function AdminDashboardSection({ allUsers, allTransactions, isDar
     if (!el) return;
     const update = () => {
       const vw = el.clientWidth;
-      // slot = (viewportWidth - (VISIBLE-1)*GAP) / VISIBLE + GAP
-      setCardSlotPx((vw - (VISIBLE - 1) * GAP_PX) / VISIBLE + GAP_PX);
+      // Determine how many cards to show based on available width
+      let count = 4;
+      if (window.innerWidth <= 480)       count = 1;
+      else if (window.innerWidth <= 768)  count = 2;
+      else if (window.innerWidth <= 1024) count = 3;
+      setVisibleCount(count);
+      // slot = (viewportWidth - (count-1)*GAP) / count + GAP
+      setCardSlotPx((vw - (count - 1) * GAP_PX) / count + GAP_PX);
     };
     update();
     const ro = new ResizeObserver(update);
     ro.observe(el);
-    return () => ro.disconnect();
+    window.addEventListener('resize', update);
+    return () => { ro.disconnect(); window.removeEventListener('resize', update); };
   }, []);
 
   const translateX = cardSlotPx ? `${-domIdx * cardSlotPx}px` : '0px';

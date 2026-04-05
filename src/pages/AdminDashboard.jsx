@@ -15,7 +15,11 @@ export default function AdminDashboard() {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
   
-  const [isDark, setIsDark] = useState(() => localStorage.getItem('finsight_theme') === 'dark');
+  const [isDark, setIsDark] = useState(() => {
+    const stored = localStorage.getItem('finsight_theme');
+    // Default to dark if no preference is stored
+    return stored ? stored === 'dark' : true;
+  });
   const [collapsed, setCollapsed] = useState(false);
   const [activeSection, setActiveSection] = useState('dashboard');
   const [refreshKey, setRefreshKey] = useState(0);
